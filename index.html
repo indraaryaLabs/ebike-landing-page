@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBike. - Electric Eco-friendly</title>
+
+    <!-- Google Fonts: Outfit for headings, Inter for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#050B07',
+                            surface: '#0B1510',
+                            surface2: '#0D1A13',
+                            lime: '#CCFF00',
+                            limeHover: '#B8E600',
+                            green: '#1A3324',
+                            textMuted: '#9CA3AF',
+                        }
+                    },
+                    backgroundImage: {
+                        'radial-green': 'radial-gradient(circle at center, #112A1C 0%, #050B07 100%)',
+                        'card-gradient': 'linear-gradient(145deg, #182E22 0%, #09130D 100%)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body
+    class="bg-brand-bg text-white font-sans antialiased overflow-x-hidden selection:bg-brand-lime selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="w-full fixed top-0 left-0 z-50 bg-brand-bg/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <i
+                    class="ph-fill ph-asterisk text-brand-lime text-2xl group-hover:rotate-90 transition-transform duration-500"></i>
+                <span class="font-display font-bold text-xl tracking-wide">eBike.</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-10 text-sm text-gray-300">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#products" class="hover:text-white transition-colors">Products</a>
+                <a href="#media" class="hover:text-white transition-colors">Media</a>
+            </div>
+
+            <!-- CTA & Mobile Menu -->
+            <div class="flex items-center gap-4">
+                <a href="#order"
+                    class="hidden md:flex bg-brand-lime text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-limeHover transition-colors items-center gap-2">
+                    Order Now
+                </a>
+                <button id="mobile-menu-btn"
+                    class="w-10 h-10 rounded-full border border-gray-700 flex md:hidden items-center justify-center hover:bg-gray-800 transition-colors">
+                    <i class="ph ph-list text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-brand-surface border-b border-brand-green p-6 flex-col gap-4 shadow-2xl z-40 opacity-0 transform -translate-y-2 transition-all duration-300">
+            <a href="#about" class="text-white font-medium hover:text-brand-lime transition-colors mobile-menu-link">About</a>
+            <a href="#features" class="text-white font-medium hover:text-brand-lime transition-colors mobile-menu-link">Features</a>
+            <a href="#products" class="text-white font-medium hover:text-brand-lime transition-colors mobile-menu-link">Products</a>
+            <a href="#media" class="text-white font-medium hover:text-brand-lime transition-colors mobile-menu-link">Media</a>
+            <a href="#order" class="mt-4 bg-brand-lime text-black px-6 py-3 rounded-xl text-center text-sm font-semibold hover:bg-brand-limeHover transition-colors mobile-menu-link">
+                Order Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about" class="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <!-- Huge Title -->
+            <div class="text-center relative z-0 mb-10 animate-fade-in-up">
+                <h1
+                    class="font-display font-extrabold text-[4.5rem] md:text-[8rem] leading-[1.05] tracking-tight text-white drop-shadow-2xl">
+                    Electric<br>
+                    <span class="text-white">Eco-friendly</span>
+                </h1>
+            </div>
+
+            <!-- Center Image & Floating Elements -->
+            <div
+                class="relative w-full max-w-5xl mx-auto mt-[-60px] md:mt-[-120px] flex justify-center z-10 h-[400px] md:h-[600px]">
+
+                <!-- AI Generated eBike Image -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[800px] h-full flex items-center justify-center pointer-events-none animate-fade-in delay-200">
+                    <img src="assets/hero_ebike.png"
+                        class="absolute inset-0 w-full h-full object-contain mix-blend-lighten opacity-90 transition-opacity duration-1000"
+                        alt="Modern eBike" />
+                </div>
+
+                <!-- Glow effect behind bike -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-brand-lime/20 blur-[100px] rounded-full z-[-1]">
+                </div>
+
+                <!-- Floating Card Left -->
+                <div
+                    class="absolute left-0 md:left-[5%] top-[40%] glass-card p-4 rounded-2xl w-56 md:w-64 transform -rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl z-20 animate-float">
+                    <p class="text-xs md:text-sm text-gray-300 leading-relaxed mb-3">Futuristic & Sustainable With
+                        Eco-friendly Modern eBike.</p>
+                    <a href="#" class="text-brand-lime text-xs font-semibold flex items-center gap-1 hover:underline">
+                        View Collection <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                </div>
+
+                <!-- Floating Video Card Right -->
+                <div class="absolute right-0 md:right-[10%] top-[20%] flex flex-col items-center gap-3 z-20">
+                    <div
+                        class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-brand-surface2 relative group cursor-pointer bg-brand-surface flex items-center justify-center">
+                        <img src="assets/vid_thumb.png"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-100 z-10"
+                            alt="Video Thumbnail" />
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center z-20">
+                            <div class="w-8 h-8 rounded-full bg-brand-lime flex items-center justify-center text-black">
+                                <i class="ph-fill ph-play text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <span
+                        class="text-xs font-medium text-white bg-black/50 px-3 py-1 rounded-full backdrop-blur-sm">Watch
+                        Video</span>
+                </div>
+            </div>
+
+            <!-- Bottom Hero Content -->
+            <div class="flex flex-col md:flex-row justify-between items-end mt-12 md:mt-0 gap-8 animate-fade-in-up delay-300">
+                <p class="text-brand-textMuted text-sm md:text-base max-w-md leading-relaxed">
+                    Comfort is of the utmost importance when choosing an electric bike, and many popular models feature
+                    ergonomic frame designs to promote comfortable riding positions.
+                </p>
+
+                <div class="flex gap-8 md:gap-12 w-full md:w-auto border-t border-gray-800 md:border-none pt-6 md:pt-0">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-brand-textMuted mb-1">Size</span>
+                        <span class="text-brand-lime font-display font-semibold text-xl md:text-2xl">50 CM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-brand-textMuted mb-1">Weight</span>
+                        <span class="text-brand-lime font-display font-semibold text-xl md:text-2xl">10 KG</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-brand-textMuted mb-1">Origin</span>
+                        <span class="text-brand-lime font-display font-semibold text-xl md:text-2xl">Jakarta</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Included Modern Features Section -->
+    <section id="features" class="max-w-6xl mx-auto px-6 py-12 reveal">
+        <div class="bg-brand-surface rounded-[2.5rem] p-10 md:p-20 relative overflow-hidden border border-brand-green">
+            <!-- Background Glow -->
+            <div class="absolute inset-0 bg-radial-green opacity-50 z-0"></div>
+
+            <div class="relative z-10 text-center">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">Included Modern Features</h2>
+                <p class="text-brand-textMuted text-sm max-w-lg mx-auto mb-20 leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration
+                </p>
+
+                <!-- Arc Diagram -->
+                <div class="relative max-w-3xl mx-auto h-48 mt-10 hidden md:block">
+                    <!-- SVG Dotted Arc -->
+                    <svg class="absolute top-8 left-0 w-full h-32 overflow-visible" viewBox="0 0 100 50"
+                        preserveAspectRatio="none">
+                        <path d="M 10,50 Q 50,-20 90,50" fill="none" stroke="#24D164" stroke-width="0.3"
+                            class="dash-arc" opacity="0.6" />
+                    </svg>
+
+                    <!-- Icons on Arc -->
+                    <div class="absolute top-[35px] left-[5%] flex flex-col items-center gap-3">
+                        <div
+                            class="w-14 h-14 rounded-full bg-[#152B1E] border border-[#2A4D38] flex items-center justify-center shadow-lg shadow-green-900/20">
+                            <i class="ph-fill ph-battery-charging text-brand-lime text-2xl"></i>
+                        </div>
+                        <span class="text-xs text-gray-300 font-medium">Superfast Charging</span>
+                    </div>
+
+                    <div
+                        class="absolute top-[-20px] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3">
+                        <div
+                            class="w-14 h-14 rounded-full bg-[#152B1E] border border-[#2A4D38] flex items-center justify-center shadow-lg shadow-green-900/20 relative">
+                            <i class="ph-fill ph-map-pin text-brand-lime text-2xl"></i>
+                            <!-- Red dot indicator -->
+                            <div class="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full border border-[#152B1E]">
+                            </div>
+                        </div>
+                        <span class="text-xs text-gray-300 font-medium">GPS Tracking</span>
+                    </div>
+
+                    <div class="absolute top-[35px] right-[5%] flex flex-col items-center gap-3">
+                        <div
+                            class="w-14 h-14 rounded-full bg-[#152B1E] border border-[#2A4D38] flex items-center justify-center shadow-lg shadow-green-900/20">
+                            <i class="ph-fill ph-engine text-brand-lime text-2xl"></i>
+                        </div>
+                        <span class="text-xs text-gray-300 font-medium">Electric Motor</span>
+                    </div>
+                </div>
+
+                <!-- Mobile version of features -->
+                <div class="flex flex-col gap-8 md:hidden relative z-10">
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-full bg-[#152B1E] flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-battery-charging text-brand-lime text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-300 font-medium">Superfast Charging</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-full bg-[#152B1E] flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-map-pin text-brand-lime text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-300 font-medium">GPS Tracking</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-left">
+                        <div class="w-12 h-12 rounded-full bg-[#152B1E] flex items-center justify-center shrink-0">
+                            <i class="ph-fill ph-engine text-brand-lime text-xl"></i>
+                        </div>
+                        <span class="text-sm text-gray-300 font-medium">Electric Motor</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features List -->
+    <section id="products" class="max-w-5xl mx-auto px-6 py-24 flex flex-col gap-32">
+
+        <!-- Feature 1 -->
+        <div class="flex flex-col md:flex-row gap-12 md:gap-20 items-center">
+            <div class="w-full md:w-1/2 reveal-left">
+                <div
+                    class="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-card-gradient p-8 flex items-center justify-center relative group">
+                    <img src="assets/feat1_battery.png" alt="Battery"
+                        class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all duration-700 opacity-80 mix-blend-luminosity relative z-10">
+                    <div class="absolute inset-0 bg-brand-green/20 z-20 pointer-events-none"></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-start gap-5 reveal-right">
+                <div
+                    class="inline-flex items-center gap-2 bg-[#0E2417] text-[#24D164] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#1A3A26]">
+                    <i class="ph-fill ph-battery-full text-sm"></i> Removable Battery
+                </div>
+                <h3 class="font-display text-3xl md:text-4xl font-bold leading-tight">Long-Lasting Battery Performance
+                    and Fast Charging</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour.
+                </p>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-center">
+            <div class="w-full md:w-1/2 reveal-right">
+                <div
+                    class="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-card-gradient p-8 flex items-center justify-center relative group">
+                    <img src="assets/feat2_pedal.png" alt="Pedal Assist"
+                        class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all duration-700 opacity-80 mix-blend-luminosity relative z-10">
+                    <div class="absolute inset-0 bg-brand-green/20 z-20 pointer-events-none"></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-start gap-5 reveal-left">
+                <div
+                    class="inline-flex items-center gap-2 bg-[#0E2417] text-[#24D164] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#1A3A26]">
+                    <i class="ph-fill ph-activity text-sm"></i> Smart Control
+                </div>
+                <h3 class="font-display text-3xl md:text-4xl font-bold leading-tight">Adaptive Pedal Assist System &
+                    Smart Connectivity</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour.
+                </p>
+                <button
+                    class="mt-4 w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-black hover:bg-brand-limeHover hover:scale-105 active:scale-95 transition-all duration-300 group">
+                    <i class="ph-bold ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="flex flex-col md:flex-row gap-12 md:gap-20 items-center">
+            <div class="w-full md:w-1/2 reveal-left">
+                <div
+                    class="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-card-gradient p-8 flex items-center justify-center relative group">
+                    <img src="assets/feat3_weather.png" alt="Weather Resistant"
+                        class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-all duration-700 opacity-80 mix-blend-luminosity relative z-10">
+                    <div class="absolute inset-0 bg-brand-green/20 z-20 pointer-events-none"></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col items-start gap-5 reveal-right">
+                <div
+                    class="inline-flex items-center gap-2 bg-[#0E2417] text-[#24D164] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#1A3A26]">
+                    <i class="ph-fill ph-cloud-sun text-sm"></i> Weather Resistant
+                </div>
+                <h3 class="font-display text-3xl md:text-4xl font-bold leading-tight">Weather Resistant & Properly Work
+                    On All Kind Of Weather</h3>
+                <p class="text-brand-textMuted text-sm leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour.
+                </p>
+                <button
+                    class="mt-4 w-12 h-12 rounded-full bg-brand-lime flex items-center justify-center text-black hover:bg-brand-limeHover hover:scale-105 active:scale-95 transition-all duration-300 group">
+                    <i class="ph-bold ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Experience / Map Section -->
+    <section id="media" class="max-w-6xl mx-auto px-6 py-24 text-center reveal">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-5">Experience The New e-bike</h2>
+        <p class="text-brand-textMuted text-sm max-w-2xl mx-auto mb-10 leading-relaxed">
+            Discover the new Roetz Life e-bike in our Fair Factory in Amsterdam. The sneak peek includes a closer look
+            at the 3D-printed e-bike model and a test ride on one of our latest prototypes.
+        </p>
+
+        <a href="#"
+            class="inline-flex items-center gap-2 bg-brand-lime text-black px-8 py-3 rounded-full text-sm font-semibold hover:bg-brand-limeHover hover:scale-105 active:scale-95 transition-all duration-300">
+            Book Test Ride <i class="ph-bold ph-arrow-right"></i>
+        </a>
+
+        <!-- World Map Placeholder -->
+        <div class="w-full max-w-4xl mx-auto mt-20 mb-24 relative opacity-60 pointer-events-none">
+            <!-- Simple dotted map representation via image -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+                alt="World Map" class="w-full h-auto filter brightness-0 invert opacity-20"
+                style="filter: brightness(0) saturate(100%) invert(67%) sepia(8%) saturate(1211%) hue-rotate(99deg) brightness(90%) contrast(85%);" />
+
+            <!-- Map Pings (Decorative) -->
+            <div class="absolute top-[30%] left-[20%] w-3 h-3 bg-brand-lime rounded-full shadow-[0_0_15px_#CCFF00]">
+            </div>
+            <div class="absolute top-[40%] left-[45%] w-3 h-3 bg-brand-lime rounded-full shadow-[0_0_15px_#CCFF00]">
+            </div>
+            <div class="absolute top-[25%] left-[75%] w-3 h-3 bg-brand-lime rounded-full shadow-[0_0_15px_#CCFF00]">
+            </div>
+            <div class="absolute top-[70%] left-[80%] w-3 h-3 bg-brand-lime rounded-full shadow-[0_0_15px_#CCFF00]">
+            </div>
+        </div>
+
+        <!-- Footer Value Props -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-brand-green pt-16 mt-12">
+            <!-- Column 1 -->
+            <div class="flex flex-col gap-4">
+                <i class="ph-fill ph-wallet text-brand-lime text-3xl mb-2"></i>
+                <h4 class="font-display font-semibold text-lg">Affordable Price</h4>
+                <p class="text-brand-textMuted text-xs leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                </p>
+            </div>
+            <!-- Column 2 -->
+            <div class="flex flex-col gap-4">
+                <i class="ph-fill ph-globe-hemisphere-west text-brand-lime text-3xl mb-2"></i>
+                <h4 class="font-display font-semibold text-lg">Global Shipment</h4>
+                <p class="text-brand-textMuted text-xs leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                </p>
+            </div>
+            <!-- Column 3 -->
+            <div class="flex flex-col gap-4">
+                <i class="ph-fill ph-hourglass-high text-brand-lime text-3xl mb-2"></i>
+                <h4 class="font-display font-semibold text-lg">Minimal Design</h4>
+                <p class="text-brand-textMuted text-xs leading-relaxed">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="max-w-6xl mx-auto px-6 py-12 md:py-24 reveal">
+        <div
+            class="bg-brand-surface rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden border border-brand-green flex flex-col md:flex-row gap-12 items-center">
+            <!-- Background Glow -->
+            <div class="absolute inset-0 bg-radial-green opacity-40 z-0 pointer-events-none"></div>
+
+            <!-- Text Content -->
+            <div class="w-full md:w-1/2 relative z-10">
+                <div
+                    class="inline-flex items-center gap-2 bg-[#0E2417] text-[#24D164] px-4 py-1.5 rounded-full text-xs font-semibold border border-[#1A3A26] mb-6">
+                    <i class="ph-fill ph-shopping-cart-simple text-sm"></i> Pre-Order
+                </div>
+                <h2 class="font-display text-3xl md:text-5xl font-bold mb-5 leading-tight">Ready to Ride the Future?
+                </h2>
+                <p class="text-brand-textMuted text-sm mb-10 leading-relaxed max-w-md">
+                    Isi formulir di bawah ini untuk memesan e-bike futuristik Anda. Tim kami akan segera menghubungi
+                    Anda untuk mengonfirmasi detail dan pengiriman.
+                </p>
+
+                <div class="flex flex-col gap-6 hidden md:flex">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#152B1E] flex items-center justify-center text-brand-lime border border-brand-green">
+                            <i class="ph-fill ph-envelope-simple text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-brand-textMuted mb-1">Email Us</p>
+                            <p class="text-sm font-semibold">hello@ebike.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="w-full md:w-1/2 relative z-10">
+                <div class="glass-card p-6 md:p-8 rounded-3xl shadow-2xl">
+                    <form class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-2">
+                            <label for="name" class="text-xs font-semibold text-gray-300">Nama Lengkap</label>
+                            <input type="text" id="name" placeholder="Masukkan nama Anda"
+                                class="bg-[#050B07] border border-brand-green rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-lime text-white transition-colors"
+                                required>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="email" class="text-xs font-semibold text-gray-300">Alamat Email</label>
+                            <input type="email" id="email" placeholder="email@contoh.com"
+                                class="bg-[#050B07] border border-brand-green rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-lime text-white transition-colors"
+                                required>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label for="message" class="text-xs font-semibold text-gray-300">Pesan (Opsional)</label>
+                            <textarea id="message" rows="4" placeholder="Ada pertanyaan atau permintaan khusus?"
+                                class="bg-[#050B07] border border-brand-green rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-brand-lime text-white transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="mt-4 bg-brand-lime text-black w-full py-4 rounded-xl text-sm font-bold hover:bg-brand-limeHover transition-colors flex justify-center items-center gap-2 group">
+                            Order Now <i
+                                class="ph-bold ph-paper-plane-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Footer Copyright -->
+    <footer class="border-t border-brand-green mt-12 py-8 text-center text-brand-textMuted text-xs">
+        <p>&copy; 2026 eBike. All rights reserved. Designed inspired by the provided UI.</p>
+    </footer>
+
+    <!-- External Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
